@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/fullpage.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/fullpage.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/easings.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/scrolloverflow.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="js/canvas-particle.js" type="text/javascript" charset="utf-8"></script>-->
+</head>
+<body>
+	<div id="fullpage">
+		<ul id="myMenu">
+		    <li data-menuanchor="firstPage" class="active"><a href="#firstPage">首页</a></li>
+		    <li data-menuanchor="secondPage"><a href="#secondPage">资料</a></li>
+		    <li data-menuanchor="thirdPage"><a href="#thirdPage">作品</a></li>
+		</ul>
+		<div class="section" style="position: relative;">
+			<canvas id="c"></canvas>
+			<div class="section-1-text">欢迎来到</div>
+			<div class="sectiong-1-left">嘿嘿</div>
+		</div>
+		<div class="section">
+			<canvas id="c1" width="300" height="150"></canvas> 
+			<div class="my">
+				<span class="my-text">个人资料</span>
+				<div class="my-name">
+					<div class="my-info">
+						<div class="mr1"><img src="img/cartoon-1.png"/></div>
+						<div class="mr2"><img src="img/cartoon-2.png"/></div>
+						<div class="mr3"><img src="img/cartoon-3.png"/></div>
+						<div class="mr4"><img src="img/cartoon-4.png"/></div>
+					</div>
+					<div class="xinxi">
+						<div class="erweima"><img src="img/erweima.png" style="width: 100%;height: 100%;"/></div>
+						<ul class="xinxi-1">
+							<li>马璐明</li>
+							<li>年龄：24岁</li>
+							<li>爱好：动漫</li>
+							<li>座右铭：天道酬勤</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="section" >
+			<div class="zuopin-bg"><img src="img/2222.gif"/></div>
+			<div class="slide">
+				<div class="zuopinbox">
+					<div class="zuopin-img"><img src="img/hzw.png"/></div>
+					<div class="zuopin-text">
+						<div class="zuopin-text-top">个人作品</div>
+						<ul class="zuopin-text-bottom">
+							<li>
+								<div class="zuopin-text-bottom-img"><img src="img/tianmao.png"/></div>
+								<a href="作品/天猫/index.html" class="zuopin-text-bottom-zhezhao">
+									天猫
+								</a>
+							</li>
+							<li>
+								<div class="zuopin-text-bottom-img"><img src="img/xiaomi.png"/></div>
+								<a href="作品/xiaomi/index.html" class="zuopin-text-bottom-zhezhao">
+									小米
+								</a>
+							</li>
+							<li>
+								<div class="zuopin-text-bottom-img"><img src="img/sxhy.png"/></div>
+								<a href="作品/素馨花卉/index.html" class="zuopin-text-bottom-zhezhao">
+									素馨花卉
+								</a>
+							</li>
+							<li>
+								<div class="zuopin-text-bottom-img"><img src="img/waimai.png"/></div>
+								<a href="作品/waimaiapp/index.html" class="zuopin-text-bottom-zhezhao">
+									外卖
+								</a>
+							</li>
+							<li>
+								<div class="zuopin-text-bottom-img"><img src="img/tianqi.png"/></div>
+								<a href="作品/tianqi/index.html" class="zuopin-text-bottom-zhezhao">
+									天气
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="shuju">
+					<div class="shuju-top">我的能力</div>
+					<div id="main" style="width: 600px;height:400px;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(document).ready(function(){
+			$('#fullpage').fullpage({
+				 //锚链接
+				anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
+				 //菜单
+				menu: '#myMenu',
+				 //侧导航
+				navigation: true,
+				 //侧导航位置
+				navigationPosition: 'left',
+				 //侧导航提示文本
+				navigationTooltips: ['首页','资料','作品','自我评价'],
+				 //侧导航文本自动显示
+				showActiveTooltip: true,
+				 //幻灯片导航是否显示
+				lidesNavigation: true,
+				 //幻灯片导航的位置
+				slidesNavPosition: 'bottom',
+				 //每个屏幕滚动动画执行的时间，时间的单位为毫秒（ms）
+				scrollingSpeed: 1000,
+				resize:false,
+				sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke'],
+				onLeave: function(index, nextIndex, direction){
+			        var leavingSection = $(this);
+			        //after leaving section 2
+			        if(index == 2){
+			            console.log("222")
+			        }
+			        else if(index == 2){
+			            alert("Going to section 1!");
+			        }
+			    }
+			});
+			jQuery.easing.def = "string";
+			$("#myMenu").animate({  
+			    left: ["70%", 'swing'],  
+//			    top: [1000, 'easeOutBounce']  
+			}); 
+			$(".section-1-text").animate({
+				top: ["40%",'swing']
+			},1000)
+			$(".sectiong-1-left").animate({
+				bottom: ["40%",'swing']
+			},1000)
+			
+			$(function () {
+		        var txt = "<span class='txt'></span>";
+		        $('body').append(txt);
+		        var txted = $(".txt");
+		        txted.css({
+		            position: "absolute",
+		            color: "cyan"
+		        });
+		        var Animated = function (x) {
+		            x.stop().animate({
+		                top: "-=80px",
+		                opacity: '1'
+		            }, 500, function () {
+		                $(this).animate({
+		                    opacity: "0"
+		                }, 500);
+		            });
+		        };
+		        $(document).on("click", function (e) {
+		            var attr = ["咦", "点我", "再点", "加油", "继续", "累吗", "好玩吗", "别点了"];
+		            var mathText = attr[Math.floor(Math.random() * attr.length)];
+		            //获取鼠标的位置
+		            var x = e.pageX - 32 + "px";
+		            var y = e.pageY - 18 + "px";
+		            txted.text(mathText);
+		            txted.css({
+		                "left": x,
+		                "top": y
+		            });
+		            Animated(txted);
+		        });
+	    	});
+	    	 
+			
+			
+		(function(main) {
+			var args = {};
+			window.onload = function() {
+				main(args);
+			};
+		})(function(args) {
+	
+			'use strict';
+	
+			var Box = function(x, y, w, h, s) {
+				this.x = x;
+				this.y = y;
+				this.w = w;
+				this.h = h;
+				this.s = s;
+				this.a = Math.random() * Math.PI * 2;
+				this.hue = Math.random() * 360;
+			};
+	
+			Box.prototype = {
+				constructor: Box,
+				update: function() {
+					this.a += Math.random() * 0.5 - 0.25;
+					this.x += Math.cos(this.a) * this.s;
+					this.y += Math.sin(this.a) * this.s;
+					this.hue += 5;
+					if(this.x > WIDTH) this.x = 0;
+					else if(this.x < 0) this.x = WIDTH;
+					if(this.y > HEIGHT) this.y = 0;
+					else if(this.y < 0) this.y = HEIGHT;
+				},
+				render: function(ctx) {
+					ctx.save();
+					ctx.fillStyle = 'hsla(' + this.hue + ', 100%, 50%, 1)';
+					ctx.translate(this.x, this.y);
+					ctx.rotate(this.a);
+					ctx.fillRect(-this.w, -this.h / 2, this.w, this.h);
+					ctx.restore();
+				}
+			};
+	
+			var Circle = function(x, y, tx, ty, r) {
+				this.x = x;
+				this.y = y;
+				this.ox = x;
+				this.oy = y;
+				this.tx = tx;
+				this.ty = ty;
+				this.lx = x;
+				this.ly = y;
+				this.r = r;
+				this.br = r;
+				this.a = Math.random() * Math.PI * 2;
+				this.sx = Math.random() * 0.5;
+				this.sy = Math.random() * 0.5;
+				this.o = Math.random() * 1;
+				this.delay = Math.random() * 200;
+				this.delayCtr = 0;
+				this.hue = Math.random() * 360;
+			};
+	
+			Circle.prototype = {
+				constructor: Circle,
+				update: function() {
+	
+					if(this.delayCtr < this.delay) {
+						this.delayCtr++;
+						return;
+					}
+	
+					this.hue += 1;
+					this.a += 0.1;
+	
+					this.lx = this.x;
+					this.ly = this.y;
+	
+					if(!clickToggle) {
+						this.x += (this.tx - this.x) * this.sx;
+						this.y += (this.ty - this.y) * this.sy;					
+					} else {
+						this.x += (this.ox - this.x) * this.sx;
+						this.y += (this.oy - this.y) * this.sy;										
+					}
+	
+	
+					this.r = this.br + Math.cos(this.a) * (this.br * 0.5);
+				},
+				render: function(ctx) {
+	
+					ctx.save();
+					ctx.globalAlpha = this.o;
+					ctx.fillStyle = 'hsla(' + this.hue + ', 100%, 50%, 1)';
+					ctx.translate(this.x, this.y);
+					ctx.beginPath();
+					ctx.arc(0, 0, this.r, 0, Math.PI * 2);
+					ctx.fill();
+					ctx.restore();
+	
+					if(clickToggle) {
+						ctx.save();
+						ctx.strokeStyle = 'hsla(' + this.hue + ', 100%, 50%, 1)';
+						ctx.beginPath();
+						ctx.moveTo(this.lx, this.ly);
+						ctx.lineTo(this.x, this.y);
+						ctx.stroke();
+						ctx.restore();					
+					}
+	
+	
+				}
+			};
+	
+			var txtCanvas = document.createElement('canvas');
+			var txtCtx = txtCanvas.getContext('2d');
+	
+			var c = document.getElementById('c');
+			var ctx = c.getContext('2d');
+	
+			var WIDTH = c.width = window.innerWidth;
+			var HEIGHT = c.height = window.innerHeight;
+			var imgData = null;
+			var idx = null;
+			var skip = 4;
+			var circles = [];
+			var circle = null;
+			var a = null;
+			var clickToggle = false;
+			var boxList = [];
+			var box = null;
+	
+			txtCanvas.width = WIDTH;
+			txtCanvas.height = HEIGHT;
+	
+			txtCtx.font = 'bold 70px Sans-serif';
+			txtCtx.textAlign = 'center';
+			txtCtx.baseline = 'middle';
+			txtCtx.fillText('H E L L O   W O R L D', WIDTH / 2, HEIGHT / 2);
+	
+			ctx.font = 'bold 12px Monospace';
+			ctx.textAlign = 'center';
+			ctx.baseline = 'middle';
+	
+			imgData = txtCtx.getImageData(0, 0, WIDTH, HEIGHT).data;
+	
+			for(var y = 0; y < HEIGHT; y += skip) {
+				for(var x = 0; x < WIDTH; x += skip) {
+					idx = (x + y * WIDTH) * 4 - 1;
+					if(imgData[idx] > 0) {
+						a = Math.PI * 2 * Math.random();
+						circle = new Circle(
+							WIDTH / 2 + Math.cos(a) * WIDTH,
+							HEIGHT / 2 + Math.sin(a) * WIDTH,
+							x, 
+							y,
+							Math.random() * 4
+						);
+						circles.push(circle);
+					}
+				}
+			}
+	
+			for(var b = 0; b < 10; b++) {
+				box = new Box(
+						WIDTH * Math.random(),
+						HEIGHT * Math.random(),
+						5,
+						2,
+						5 + Math.random() * 5
+					);
+				boxList.push(box);
+			}
+	
+	
+			c.addEventListener('click', function(e) {
+				clickToggle = !clickToggle;
+			});
+	
+			requestAnimationFrame(function loop() {
+				requestAnimationFrame(loop);
+	
+				ctx.globalCompositeOperation = 'source-over';
+				ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+				ctx.fillRect(0, 0, WIDTH, HEIGHT);
+	
+				ctx.fillStyle = 'white';
+				ctx.fillText('CLICK TO TOGGLE', WIDTH / 2, HEIGHT / 2 + 100);					
+	
+				ctx.globalCompositeOperation = 'lighter';
+	
+				for(var i = 0, len = circles.length; i < len; i++) {
+					circle = circles[i];
+					circle.update();
+					circle.render(ctx);
+				}
+	
+				for(var j = 0; j < boxList.length; j++) {
+					box = boxList[j];
+					box.update();
+					box.render(ctx);
+				}
+	
+			});
+	
+	
+		});
+		
+		$(".my-info").click(function(){
+			$(".my-info").css({"opacity":0});
+			$(".my-text").css({"opacity":1})
+			$(".xinxi").css({"z-index":2});
+			$(".xinxi").css({"opacity":1});
+		})
+		
+		
+		$(".zuopin-img").click(function(){
+			$(".zuopin-img").css({"display":"none"});
+			$(".zuopin-text-top").animate({"top":0});
+			$(".zuopin-text-bottom").animate({"bottom":0});
+			$(".zuopin-text-bottom li:first-child").animate({"bottom":0});
+			$(".zuopin-text-bottom li:nth-child(2)").animate({"bottom":0});
+			$(".zuopin-text-bottom li:nth-child(3)").animate({"bottom":0});
+			$(".zuopin-text-bottom li:nth-child(4)").animate({"bottom":0});
+			$(".zuopin-text-bottom li:nth-child(5)").animate({"bottom":0});
+		})
+		
+		
+		var myChart = echarts.init(document.getElementById('main'));
+		myChart.setOption({
+	   	 	series : [
+	        {
+	            name: '能力占比',
+	            type: 'pie',
+	            radius: '55%',
+	            data:[
+	                {value:300, name:'HTML+CSS'},
+	                {value:100, name:'js'},
+	                {value:200, name:'jQuery'},
+	                {value:300, name:'插件'},
+	           	]
+	        }
+	   		]
+		})
+		
+		$(document).ready(function() {			
+            var canvas = document.getElementById("c1");
+			var ctx = canvas.getContext("2d");
+			var c = $("#c1");
+			var w,h;
+			var pi = Math.PI;
+			var all_attribute = {
+				num:100,            			 // 个数
+				start_probability:0.1,		     // 如果数量小于num，有这些几率添加一个新的     		     
+				radius_min:1,   			     // 初始半径最小值
+				radius_max:2,   			     // 初始半径最大值
+				radius_add_min:.3,               // 半径增加最小值
+				radius_add_max:.5,               // 半径增加最大值
+				opacity_min:0.3,                 // 初始透明度最小值
+				opacity_max:0.5, 				 // 初始透明度最大值
+				opacity_prev_min:.003,            // 透明度递减值最小值
+				opacity_prev_max:.005,            // 透明度递减值最大值
+				light_min:40,                 // 颜色亮度最小值
+				light_max:70,                 // 颜色亮度最大值
+			};
+			var style_color = find_random(0,360);  
+			var all_element =[];
+			window_resize();
+			function start(){
+				window.requestAnimationFrame(start);
+				style_color+=.1;
+				ctx.fillStyle = 'hsl('+style_color+',100%,97%)';
+				ctx.fillRect(0, 0, w, h);
+				if (all_element.length < all_attribute.num && Math.random() < all_attribute.start_probability){
+					all_element.push(new ready_run);
+				}
+				all_element.map(function(line) {
+					line.to_step();
+				})
+			}
+			function ready_run(){
+				this.to_reset();
+			}
+			ready_run.prototype = {
+				to_reset:function(){
+					var t = this;
+					t.x = find_random(0,w);
+					t.y = find_random(0,h);
+					t.radius = find_random(all_attribute.radius_min,all_attribute.radius_max);
+					t.radius_change = find_random(all_attribute.radius_add_min,all_attribute.radius_add_max);
+					t.opacity = find_random(all_attribute.opacity_min,all_attribute.opacity_max);
+					t.opacity_change = find_random(all_attribute.opacity_prev_min,all_attribute.opacity_prev_max);
+					t.light = find_random(all_attribute.light_min,all_attribute.light_max);
+					t.color = 'hsl('+style_color+',100%,'+t.light+'%)';
+				},
+				to_step:function(){
+					var t = this;
+					t.opacity -= t.opacity_change;
+					t.radius += t.radius_change;
+					if(t.opacity <= 0){
+						t.to_reset();
+						return false;
+					}
+					ctx.fillStyle = t.color;
+					ctx.globalAlpha = t.opacity;
+					ctx.beginPath();
+					ctx.arc(t.x,t.y,t.radius,0,2*pi,true);
+					ctx.closePath();
+					ctx.fill();
+					ctx.globalAlpha = 1;
+				}
+			}
+			function window_resize(){
+				w = window.innerWidth;
+				h = window.innerHeight;
+				canvas.width = w;
+				canvas.height = h;
+			}
+			$(window).resize(function(){
+				window_resize();
+			});
+			function find_random(num_one,num_two){
+				return Math.random()*(num_two-num_one)+num_one;
+			}
+			(function() {
+				var lastTime = 0;
+				var vendors = ['webkit', 'moz'];
+				for(var xx = 0; xx < vendors.length && !window.requestAnimationFrame; ++xx) {
+					window.requestAnimationFrame = window[vendors[xx] + 'RequestAnimationFrame'];
+					window.cancelAnimationFrame = window[vendors[xx] + 'CancelAnimationFrame'] ||
+												  window[vendors[xx] + 'CancelRequestAnimationFrame'];
+				}
+			
+				if (!window.requestAnimationFrame) {
+					window.requestAnimationFrame = function(callback, element) {
+						var currTime = new Date().getTime();
+						var timeToCall = Math.max(0, 16.7 - (currTime - lastTime));
+						var id = window.setTimeout(function() {
+							callback(currTime + timeToCall);
+						}, timeToCall);
+						lastTime = currTime + timeToCall;
+						return id;
+					};
+				}
+				if (!window.cancelAnimationFrame) {
+					window.cancelAnimationFrame = function(id) {
+						clearTimeout(id);
+					};
+				}
+			}());
+			start();
+        });
+		
+		
+		
+		
+	});
+</script>

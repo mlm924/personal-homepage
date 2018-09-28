@@ -1,0 +1,264 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	list-style: none;
+}
+a {
+	text-decoration: none;
+
+}
+
+body {
+	background-color: #f1f1f1;
+}
+/*导航栏开始*/
+header {
+	width: 100%;
+	height: 80px;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+}
+.header1 {
+	width: 1311px;
+	height: 100%;
+	margin: 0 auto;
+}
+.header-right {
+	width: 510px;
+	height: 80px;
+	float: right;
+}
+.header-right ul li a {
+	display: block;
+	width: 85px;
+	height: 100%;
+	text-align: center;
+	line-height: 80px;
+	font-size: 14px;
+	color: #2a333c;
+	float: left;
+}
+.header-right li:nth-of-type(5) a {
+	color: #16b0dc;
+}
+.header-right ul li a:hover {
+	color: #16b0dc;
+}
+.header-right li:nth-of-type(6) a {
+	margin: 0;
+}
+/*主体开始*/
+.hyhy-top {
+	width: 145px;
+	height: 36px;
+	font-size: 36px;
+	color: #f67a82;
+	margin: 122px auto 74px;
+	text-align: center;
+}
+main {
+	width: 1311px;
+	height: 100%;
+	margin: 0 auto;
+}
+.main-left {
+	width: 875px;
+	height: 100%;
+	background-color: #fff;
+	float: left;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	padding-top: 32px;
+}
+.main-right {
+	width: 406px;
+	height: 408px;
+	background-color: #fff;
+	float: right;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+/*左部分开始*/
+.main-left-1 {
+    width: 815px;
+    margin: 0 auto;
+}
+.main-left-1 li {
+	width: 100%;
+	padding-bottom: 27px;
+	padding-top: 12px;
+	border-bottom: 1px solid #f0f2f5;
+	background: #fff;
+	float: left;
+}
+/*.main-left-1 li:hover p {
+	color: #fff;
+}
+.main-left-1 li:hover span {
+	color: #fff;
+}*/
+.main-left-1 i {
+	font-size: 38px;
+	color: #a3afb7;
+	float: left;
+	margin-right: 10px;
+}
+.main-left-1 h6 {
+	display: inline-block;
+	font-size: 16px;
+	color: #37478b;
+	margin-bottom: 5px;
+}
+.main-left-1 p {
+	font-size: 14px;
+	color: #a3afb7;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.main-left-1 span {
+	font-size: 12px;
+	color: #a3afb7;
+	float: right;
+}
+.jzgd {
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	float: left;
+}
+.jzgd a {
+	display: block;
+	width: 815px;
+	height: 36px;
+	margin: 0 auto;
+	background-color: #e4eaec;
+    text-align: center;
+    line-height: 36px;
+    font-size: 14px;
+    color: #808994;
+    transition: all 0.5s ease;
+}
+.jzgd a i {
+	margin: 5px;
+	font-size: 12px;
+}
+.jzgd a:hover {
+	background-color: rgb(243,247,279);
+}
+/*右部分开始*/
+.main-right-1 {
+	width: 346px;
+	margin: 0 auto;
+}
+.main-right-1 input {
+	width: 326px;
+	height: 34px;
+	border: 1px solid #f0f2f5;
+	padding-left: 18px;
+	font-size: 14px;
+	line-height: 36px;
+	margin-bottom: 30px;
+	outline: none;
+}
+.main-right-1 textarea {
+	width: 326px;
+	height: 122px;
+	border: 1px solid #f0f2f5;
+	padding-left: 18px;
+	font-size: 14px;
+	line-height: 36px;
+	/*margin-bottom: 30px;*/
+	outline: none;
+	resize: none;
+}
+.mrtext {
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+.mrtext span {
+	color: red;
+}
+.main-right-1 li:nth-child(5) input {
+	width: 217px;
+	float: left;
+}
+input::-webkit-input-placeholder {
+	color: #A3AFB7;
+}
+.yzm {
+	width: 107px;
+	height: 34px;
+	border: 1px solid #f0f2f5;
+	float: left;
+}
+.yzm img {
+	width: 100%;
+	height: 100%;
+}
+.main-right-1 li:last-child button{
+	padding: 0;
+	width: 346px;
+	height: 36px;
+	float: left;
+	background-color: #62a8ea;
+    line-height: 36px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.5s ease;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.main-right-1 li:last-child button:hover {
+	opacity: 0.8;
+}
+/*底部开始*/
+.kb {
+	width: 100%;
+	height: 20px;
+	background-color: #fff;
+	margin-top: 30px;
+	float: left;
+}
+footer {
+	width: 100%;
+	height: 161px;
+	background-color: #f5f5f5;
+	float: left;
+}
+.footer-1 {
+	width: 355px;
+	height: 136px;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 25px;
+}
+.footer-1 li {
+	font-size: 12px;
+	color: #aaa;
+	margin-bottom: 12px;
+}
+.footer-1 li:first-child a {
+	font-size: 28px;
+	margin-bottom: 22px;
+	margin-right: 10px;
+}
+.footer-1 li:first-child > a:hover {
+	opacity: 0.5;
+}
+.footer-1 li:nth-of-type(2) a{
+	color: #62a8ea;
+}
+.footer-1 li img {
+	margin-left: 10px; 
+}
+.footer-1 li:nth-of-type(2) > a:hover{
+	opacity: 0.5;
+	text-decoration: underline;
+}

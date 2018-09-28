@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>素馨花艺</title>
+    <link rel="stylesheet" type="text/css" href="./css/sxhy.css">
+    <link rel="stylesheet" type="text/css" href="./css/iconfont.css">
+</head>
+<body>
+     <!-- 导航栏开始 -->
+    <header>
+   	  <div class="header1">
+   	  	<div class="header-right">
+    		<ul>
+    			<li><a href="index.html">网站首页</a></li>
+    			<li><a href="hyhy.html">花言花语</a></li>
+    			<li><a href="sxdt.html">素馨动态</a></li>
+    			<li><a href="#">素馨花艺</a></li>
+    			<li><a href="lyjy.html">留言建议</a></li>
+    			<li><a href="gysx.html">关于素馨</a></li>
+    		</ul>
+    	</div>
+   	  </div>
+    </header>
+    <!-- 主体开始 -->
+    <main>
+        <ul class="imgbox">
+            <li>
+            	<img src="./img/sxhy1.jpg">
+                <div class="text-1">
+                    <ul class="text-2">
+                       <li>2018-01-20</li>
+                       <li>—</li>
+                       <li>桌花瓶插花</li>
+                       <li class="dj"><a href="javascript:void(false)">浏览</a></li>
+                    </ul>                    
+                </div>
+            </li>
+            <li><img src="./img/sxhy2.jpg">
+                <div class="text-1">
+                    <ul class="text-2">
+                       <li>2018-01-20</li>
+                       <li>—</li>
+                       <li>桌花瓶插花</li>
+                       <li class="dj"><a href="javascript:void(false)">浏览</a></li>
+                    </ul>                    
+                </div>
+            </li>
+            <li><img src="./img/sxhy3.jpg">
+                <div class="text-1">
+                    <ul class="text-2">
+                       <li>2018-01-20</li>
+                       <li>—</li>
+                       <li>桌花瓶插花</li>
+                       <li class="dj"><a href="javascript:void(false)">浏览</a></li>
+                    </ul>                    
+                </div>
+            </li>
+            <li><img src="./img/sxhy4.jpg">
+                <div class="text-1">
+                    <ul class="text-2">
+                       <li>2018-01-20</li>
+                       <li>—</li>
+                       <li>桌花瓶插花</li>
+                       <li class="dj"><a href="javascript:void(false)">浏览</a></li>
+                    </ul>                    
+                </div>
+            </li>
+            <li><img src="./img/sxhy1.jpg">
+                <div class="text-1">
+                    <ul class="text-2">
+                       <li>2018-01-20</li>
+                       <li>—</li>
+                       <li>桌花瓶插花</li>
+                       <li class="dj"><a href="javascript:void(false)">浏览</a></li>
+                    </ul>                    
+                </div>
+            </li>
+            <li><img src="./img/sxhy2.jpg">
+                <div class="text-1">
+                    <ul class="text-2">
+                       <li>2018-01-20</li>
+                       <li>—</li>
+                       <li>桌花瓶插花</li>
+                       <li class="dj"><a href="javascript:void(false)">浏览</a></li>
+                    </ul>                    
+                </div>
+            </li>
+        </ul>
+    </main>
+    <div class="mask">
+    	<a  class="btnL"><i class="iconfont icon-zuojiantou"></i></a>
+    	<img src="img/hzdr.jpg" class="bigimg"/>
+    	<a class="btnR"><i class="iconfont icon-youjiantou"></i></a>
+    </div>
+      <!-- 底部开始 -->
+    <div class="kb"></div>
+    <footer>
+      <div class="footer-1">
+        <ul>
+          <li><a href="" class="iconfont icon-weixin" style="color: green"></a><a href="" class="iconfont icon-qq" style="color: #62a8ea"></a><a href="" class="iconfont icon-youjian" style="color: #62a8ea"></a> </li>
+          <li><a href="">豫ICP备17021305号</a>
+            <a href=""><img src="./img/gongan.png"></a>
+            <a href="">豫公网安备41012202000160号</a></li>
+          <li>联系电话 0371-62180519 15890062947</li>
+          <li>郑州素馨花卉有限公司 版权所有 © 2017-2021</li>
+        </ul>
+      </div>
+    </footer>
+    
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		$(".dj").click(function(){
+    			$(".mask").addClass("active");
+    			$(".bigimg").attr("src",$(this).children("img").attr("src"));
+    		})
+    		$(".mask").click(function(){
+    			$(this).removeClass("active");
+    		})
+    		let index=0;
+    		$(".btnR").click(function(e){
+    			e.stopPropagation();
+    			index++;
+    			if(index==$(".imgbox>li").length){
+    				index=0;
+    			}
+    			let src2=$(".imgbox>li").eq(index).children("img").attr("src");
+    			$(".bigimg").attr("src",src2);
+    		})
+    		$(".btnL").click(function(e){
+    			e.stopPropagation();
+    			index--;
+    			if(index==-1){
+    				index=$(".imgbox>li").length-1;
+    			}
+    			let src2=$(".imgbox>li").eq(index).children("img").attr("src");
+    			$(".bigimg").attr("src",src2);
+    		})
+    	})
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	list-style: none;
+}
+a {
+	text-decoration: none;
+
+}
+
+body {
+	background-color: #fff;
+}
+/*头部开始*/
+header {
+	width: 100%;
+	height: 497px;
+}
+.banner {
+	width: 100%;
+	height: 497px;
+}
+.banner  ul li,
+.banner  ul li a,
+.banner  ul li a img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+    left: 0;
+    z-index: 10;
+}
+.header-top {
+	width: 100%;
+	height: 80px;
+	background-color: rgba(0,0,0,0.2);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	transition: background .5s;
+}
+.header-top1 {
+	width: 1311px;
+	height: 80px;
+	margin: 0 auto;
+}
+.logo {
+	width: 140px;
+	height: 32px;
+    margin-top: 20px;
+    float: left;
+}
+.logo img {
+	width: 140px;
+	height: 40px;
+}
+.header-right {
+	width: 510px;
+	height: 80px;
+	float: right;
+}
+.header-right ul li a {
+	display: block;
+	width: 85px;
+	height: 100%;
+	text-align: center;
+	line-height: 80px;
+	font-size: 14px;
+	color: #fff;
+	float: left;
+}
+.header-right li:nth-of-type(6) a {
+	color: #16b0dc;
+}
+.header-right ul li a:hover {
+	color: #16b0dc;
+}
+.header-right li:nth-of-type(6) a {
+	margin: 0;
+}
+/*素馨花卉开始*/
+.sxhh {
+	width: 858px;
+	height: 732px;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+	box-sizing: border-box;
+	padding-top: 71px;
+}
+.sxhh li {
+	font-size: 14px;
+	color: #ababab;
+	margin-bottom: 16px;
+}
+.sxhh li:first-child {
+	margin-bottom: 36px;
+}
+.sxhh li:last-child {
+	margin-top: 40px;
+}
+/*底部开始*/
+.kb {
+	width: 100%;
+	height: 20px;
+	border-top: 1px #f5f5f5 solid;
+	background-color: #fff;
+}
+footer {
+	width: 100%;
+	height: 161px;
+	background-color: #f5f5f5;
+}
+.footer-1 {
+	width: 355px;
+	height: 136px;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 25px;
+}
+.footer-1 li {
+	font-size: 12px;
+	color: #aaa;
+	margin-bottom: 12px;
+}
+.footer-1 li:first-child a {
+	font-size: 28px;
+	margin-bottom: 22px;
+	margin-right: 10px;
+}
+.footer-1 li:first-child > a:hover {
+	opacity: 0.5;
+}
+.footer-1 li:nth-of-type(2) a{
+	color: #62a8ea;
+}
+.footer-1 li img {
+	margin-left: 10px; 
+}
+.footer-1 li:nth-of-type(2) > a:hover{
+	opacity: 0.5;
+	text-decoration: underline;
+}

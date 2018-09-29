@@ -41,6 +41,8 @@
 							<li>马璐明</li>
 							<li>年龄：24岁</li>
 							<li>爱好：动漫</li>
+							<li>籍贯：山西长治</li>
+							<li>手机号：15235546350</li>
 							<li>座右铭：天道酬勤</li>
 						</ul>
 					</div>
@@ -93,7 +95,7 @@
 			<div class="slide">
 				<div class="shuju">
 					<div class="shuju-top">我的能力</div>
-					<div id="main" style="width: 600px;height:400px;"></div>
+					<div id="main" style="width: 600px;height:400px;background: transparent;"></div>
 				</div>
 			</div>
 		</div>
@@ -101,7 +103,7 @@
 </body>
 </html>
 <script type="text/javascript">
-	$(document).ready(function(){
+//	$(document).ready(function(){
 			$('#fullpage').fullpage({
 				 //锚链接
 				anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
@@ -140,10 +142,10 @@
 //			    top: [1000, 'easeOutBounce']  
 			}); 
 			$(".section-1-text").animate({
-				top: ["40%",'swing']
+				top: ["20%",'swing']
 			},1000)
 			$(".sectiong-1-left").animate({
-				bottom: ["40%",'swing']
+				bottom: ["60%",'swing']
 			},1000)
 			
 			$(function () {
@@ -180,7 +182,7 @@
 	    	});
 	    	 
 			
-			
+		//第一屏
 		(function(main) {
 			var args = {};
 			window.onload = function() {
@@ -387,6 +389,7 @@
 	
 		});
 		
+		
 		$(".my-info").click(function(){
 			$(".my-info").css({"opacity":0});
 			$(".my-text").css({"opacity":1})
@@ -535,5 +538,5 @@
 		
 		
 		
-	});
+//	});
 </script>
